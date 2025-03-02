@@ -1,5 +1,5 @@
 # Webserv
-A server built in c++
+A server built in c++.
 This is an Ecole 42 common core project.
 
 # How to use:
