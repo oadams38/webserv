@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Tester</title>
+</head>
+<body>
+    <h1>Love Tester</h1>
+    <!-- /love-test being the indication/path for cgi execution with the two name params-->
+    <form action="/CGIScript/LoveScriptCGI.py" method="GET">
+        <label for="name1">Your Name:</label><br>
+        <input type="text" id="name1" name="name1" required><br><br>
+        
+        <label for="name2">Their Name:</label><br>
+        <input type="text" id="name2" name="name2" required><br><br>
+        
+        <button type="submit">Test Love!</button>
+    </form>
+</body>
+</html>

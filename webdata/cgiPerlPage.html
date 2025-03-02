@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Input to CGI Script</title>
+    <script>
+        async function sendData() {
+            const userInput = document.getElementById('userInput').value;
+            try {
+                const response = await fetch('/print/print.pl', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'text/plain'
+                    },
+                    body: userInput
+                });
+
+                const result = await response.text();
+                document.getElementById('response').innerText = result;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('response').innerText = 'Error sending data.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Send Input to CGI Perl Script</h1>
+    <textarea id="userInput" placeholder="Type your input here"></textarea><br>
+    <button onclick="sendData()">Submit</button>
+    <p><strong>Response:</strong></p>
+    <pre id="response"></pre>
+</body>
+</html>
